@@ -1,9 +1,7 @@
-# -*- coding: utf-8 -*-
+from YAMLDataReader import YAMLDataReader
+from CheckAll90Ratings import CheckAll90Ratings
 import argparse
 import sys
-
-from CalcRating import CalcRating
-from TextDataReader import TextDataReader
 
 
 def get_path_from_arguments(args) -> str:
@@ -16,13 +14,11 @@ def get_path_from_arguments(args) -> str:
 
 def main():
     path = get_path_from_arguments(sys.argv[1:])
-
-    reader = TextDataReader()
+    reader = YAMLDataReader()
     students = reader.read(path)
     print("Students: ", students)
-
-    rating = CalcRating(students).calc()
-    print("Rating: ", rating)
+    rating = CheckAll90Ratings(students).calc()
+    print("Ratings All 90: ", rating)
 
 
 if __name__ == "__main__":

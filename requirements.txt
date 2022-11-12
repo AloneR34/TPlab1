@@ -1,2 +1,5 @@
-pycodestyle
 pytest
+mypy
+pycodestyle
+pyyaml
+types-PyYAML
